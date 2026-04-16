@@ -1,62 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jay Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg,#1d2671,#c33764);
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #00c6ff;
+    color: #000;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Admin Panel */
+#adminPanel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: #111;
+    padding: 20px;
+    display: none;
+}
+
+input, textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- Navbar -->
 <header>
-    <h2>Jay.dev</h2>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    Jay Gajipara 🚀
+    <br>
+    <button onclick="toggleAdmin()">Admin Panel</button>
 </header>
 
-<!-- Hero -->
-<section id="home" class="hero">
-    <h1>Hello, I'm Jay 👋</h1>
-    <p>Laravel Developer | PHP | MySQL</p>
-    <a href="#contact" class="btn">Hire Me</a>
+<section>
+    <h1 id="name">Hello, I'm Jay 👋</h1>
+    <p id="role">Laravel Developer</p>
 </section>
 
-<!-- About -->
-<section id="about">
-    <h2>About Me</h2>
-    <p>I am a Laravel developer with experience in CRUD, Admin Panels, and Web Apps.</p>
+<section>
+    <h2>About</h2>
+    <div class="card" id="about">
+        Passionate web developer from Rajkot.
+    </div>
 </section>
 
-<!-- Projects -->
-<section id="projects">
+<section>
     <h2>Projects</h2>
-
-    <div class="card">
-        <h3>Admin Panel</h3>
-        <p>Laravel Admin Panel with role management.</p>
+    <div class="card" id="project">
+        Car Showroom Management System
     </div>
-
-    <div class="card">
-        <h3>Blog System</h3>
-        <p>Full blog project using Laravel.</p>
-    </div>
-
 </section>
 
-<!-- Contact -->
-<section id="contact">
+<section>
     <h2>Contact</h2>
-    <p>Email: your@email.com</p>
+    <div class="card" id="contact">
+        Email: jaygajipara07@gmail.com
+    </div>
 </section>
 
-<footer>
-    <p>© 2026 Jay Portfolio</p>
-</footer>
+<!-- ADMIN PANEL -->
+<div id="adminPanel">
+    <h3>Admin Panel</h3>
+
+    <label>Name</label>
+    <input id="nameInput">
+
+    <label>Role</label>
+    <input id="roleInput">
+
+    <label>About</label>
+    <textarea id="aboutInput"></textarea>
+
+    <label>Project</label>
+    <textarea id="projectInput"></textarea>
+
+    <label>Contact</label>
+    <textarea id="contactInput"></textarea>
+
+    <button onclick="updateData()">Save</button>
+</div>
+
+<script>
+// Toggle Admin Panel
+function toggleAdmin() {
+    let panel = document.getElementById("adminPanel");
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+}
+
+// Update Data
+function updateData() {
+    document.getElementById("name").innerText = document.getElementById("nameInput").value;
+    document.getElementById("role").innerText = document.getElementById("roleInput").value;
+    document.getElementById("about").innerText = document.getElementById("aboutInput").value;
+    document.getElementById("project").innerText = document.getElementById("projectInput").value;
+    document.getElementById("contact").innerText = document.getElementById("contactInput").value;
+}
+
+// Animation on scroll
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".card").forEach(card => {
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+    });
+});
+</script>
 
 </body>
 </html>
