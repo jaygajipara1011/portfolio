@@ -35,23 +35,28 @@ body {
     transform: translateY(0);
 }
 
+/* Cursor */
 .cursor {
-    width: 18px;
-    height: 18px;
+    width: 30px;
+    height: 30px;
     border: 2px solid #38bdf8;
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out;
+    z-index: 9999;
 }
+
 .cursor2 {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     background: #38bdf8;
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     transform: translate(-50%, -50%);
+    z-index: 9999;
 }
 </style>
 
@@ -59,9 +64,11 @@ body {
 
 <body class="text-white cursor-none">
 
+<!-- Cursor -->
 <div class="cursor"></div>
 <div class="cursor2"></div>
 
+<!-- Navbar -->
 <header class="flex justify-between items-center px-6 py-4 glass sticky top-0">
     <h1 class="text-xl font-bold text-cyan-400">Jay.dev</h1>
 </header>
@@ -88,27 +95,26 @@ body {
 <section class="max-w-6xl mx-auto px-6 py-16 fade">
     <h2 class="text-3xl font-bold text-cyan-400 mb-6">Skills</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="glass p-4 rounded text-center">PHP</div>
-        <div class="glass p-4 rounded text-center">Laravel</div>
-        <div class="glass p-4 rounded text-center">MySQL</div>
-        <div class="glass p-4 rounded text-center">Bootstrap</div>
-        <div class="glass p-4 rounded text-center">jQuery</div>
-        <div class="glass p-4 rounded text-center">Responsive</div>
+        <div class="glass p-4 rounded text-center hover:scale-105 transition">PHP</div>
+        <div class="glass p-4 rounded text-center hover:scale-105 transition">Laravel</div>
+        <div class="glass p-4 rounded text-center hover:scale-105 transition">MySQL</div>
+        <div class="glass p-4 rounded text-center hover:scale-105 transition">Bootstrap</div>
+        <div class="glass p-4 rounded text-center hover:scale-105 transition">jQuery</div>
+        <div class="glass p-4 rounded text-center hover:scale-105 transition">Responsive</div>
     </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- Experience -->
 <section class="max-w-6xl mx-auto px-6 py-16 fade">
     <div class="glass p-6 rounded-xl">
         <h2 class="text-3xl font-bold text-cyan-400 mb-4">Work Experience</h2>
-
         <h3 class="text-xl font-semibold">Ocean Infotech (2023–2025)</h3>
         <ul class="list-disc ml-5 mt-3 space-y-2 text-gray-200">
             <li>Worked on Live CRM Project</li>
-            <li>Developed and customized modules for RGT Export</li>
-            <li>Integrated Google Drive automation for student records</li>
-            <li>Built dynamic websites with admin panels</li>
-            <li>Handled client requirements and project execution</li>
+            <li>Developed modules for RGT Export</li>
+            <li>Integrated Google Drive automation</li>
+            <li>Built dynamic admin panel websites</li>
+            <li>Handled client requirements</li>
         </ul>
     </div>
 </section>
@@ -138,7 +144,7 @@ body {
 </footer>
 
 <script>
-// Scroll animation
+// Scroll Animation
 document.querySelectorAll('.fade').forEach(el => {
     window.addEventListener('scroll', () => {
         if (el.getBoundingClientRect().top < window.innerHeight - 100) {
@@ -147,15 +153,41 @@ document.querySelectorAll('.fade').forEach(el => {
     });
 });
 
-// Cursor
-const c1 = document.querySelector('.cursor');
-const c2 = document.querySelector('.cursor2');
+// Smooth Cursor Animation
+const cursor = document.querySelector('.cursor');
+const cursor2 = document.querySelector('.cursor2');
 
-document.addEventListener('mousemove', e => {
-    c1.style.left = e.clientX + 'px';
-    c1.style.top = e.clientY + 'px';
-    c2.style.left = e.clientX + 'px';
-    c2.style.top = e.clientY + 'px';
+let mouseX = 0, mouseY = 0;
+let posX = 0, posY = 0;
+
+document.addEventListener("mousemove", e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursor2.style.left = mouseX + "px";
+    cursor2.style.top = mouseY + "px";
+});
+
+function animate() {
+    posX += (mouseX - posX) * 0.15;
+    posY += (mouseY - posY) * 0.15;
+
+    cursor.style.left = posX + "px";
+    cursor.style.top = posY + "px";
+
+    requestAnimationFrame(animate);
+}
+animate();
+
+// Hover grow effect
+document.querySelectorAll("a, button, .glass").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1.8)";
+    });
+
+    el.addEventListener("mouseleave", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1)";
+    });
 });
 </script>
 
