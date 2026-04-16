@@ -3,149 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jay Portfolio</title>
+<title>Jay Gajipara | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI';
-    background: linear-gradient(135deg,#1d2671,#c33764);
-    color: #fff;
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
 }
-
-header {
-    text-align: center;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
-
-section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    margin: 15px auto;
-    padding: 20px;
-    border-radius: 15px;
-    width: 80%;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.05);
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    background: #00c6ff;
-    color: #000;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* Admin Panel */
-#adminPanel {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    background: #111;
-    padding: 20px;
-    display: none;
-}
-
-input, textarea {
-    width: 100%;
-    margin: 5px 0;
-    padding: 8px;
-}
-
 </style>
+
 </head>
 
-<body>
+<body class="bg-gray-900 text-white">
 
-<header>
-    Jay Gajipara 🚀
-    <br>
-    <button onclick="toggleAdmin()">Admin Panel</button>
+<!-- Navbar -->
+<header class="flex justify-between items-center p-5 bg-gray-800 sticky top-0 z-50">
+    <h1 class="text-xl font-bold">Jay.dev</h1>
+    <nav class="space-x-4">
+        <a href="#about" class="hover:text-yellow-400">About</a>
+        <a href="#skills" class="hover:text-yellow-400">Skills</a>
+        <a href="#projects" class="hover:text-yellow-400">Projects</a>
+        <a href="#contact" class="hover:text-yellow-400">Contact</a>
+    </nav>
 </header>
 
-<section>
-    <h1 id="name">Hello, I'm Jay 👋</h1>
-    <p id="role">Laravel Developer</p>
+<!-- Hero -->
+<section class="text-center py-20 fade-up">
+    <h2 class="text-4xl font-bold">Hi, I'm Jay Gajipara 👋</h2>
+    <p class="text-xl mt-4 text-gray-300">Web Developer | Laravel | PHP | MySQL</p>
 </section>
 
-<section>
-    <h2>About</h2>
-    <div class="card" id="about">
-        Passionate web developer from Rajkot.
+<!-- About -->
+<section id="about" class="max-w-5xl mx-auto py-10 px-5 fade-up">
+    <h2 class="text-2xl font-bold mb-5">About Me</h2>
+    <p class="text-gray-300">
+        I aim to work in an organization where I can grow financially, professionally, and socially by applying my skills and knowledge gained during my education.
+    </p>
+</section>
+
+<!-- Education -->
+<section class="max-w-5xl mx-auto py-10 px-5 fade-up">
+    <h2 class="text-2xl font-bold mb-5">Education</h2>
+    <div class="bg-gray-800 p-5 rounded mb-3">
+        <p><b>B.Tech Computer Engineering</b> - Atmiya University (8 CGPA)</p>
+    </div>
+    <div class="bg-gray-800 p-5 rounded mb-3">
+        <p>12th - 62% (2019–2020)</p>
+    </div>
+    <div class="bg-gray-800 p-5 rounded">
+        <p>10th - 73% (2017–2018)</p>
     </div>
 </section>
 
-<section>
-    <h2>Projects</h2>
-    <div class="card" id="project">
-        Car Showroom Management System
+<!-- Skills -->
+<section id="skills" class="max-w-5xl mx-auto py-10 px-5 fade-up">
+    <h2 class="text-2xl font-bold mb-5">Skills</h2>
+    <div class="flex flex-wrap gap-3">
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded">PHP</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded">Laravel</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded">MySQL</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded">Bootstrap</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded">jQuery</span>
+        <span class="bg-yellow-400 text-black px-3 py-1 rounded">Responsive Design</span>
     </div>
 </section>
 
-<section>
-    <h2>Contact</h2>
-    <div class="card" id="contact">
-        Email: jaygajipara07@gmail.com
+<!-- Projects -->
+<section id="projects" class="max-w-5xl mx-auto py-10 px-5 fade-up">
+    <h2 class="text-2xl font-bold mb-5">Projects</h2>
+    <div class="bg-gray-800 p-5 rounded">
+        <h3 class="text-xl font-bold">Car Showroom Management System</h3>
+        <p class="text-gray-300 mt-2">
+            Built using PHP, JavaScript, and MySQL to manage car details, customers, and sales efficiently.
+        </p>
     </div>
 </section>
 
-<!-- ADMIN PANEL -->
-<div id="adminPanel">
-    <h3>Admin Panel</h3>
+<!-- Experience -->
+<section class="max-w-5xl mx-auto py-10 px-5 fade-up">
+    <h2 class="text-2xl font-bold mb-5">Experience</h2>
+    <div class="bg-gray-800 p-5 rounded space-y-2">
+        <p><b>Ocean Infotech (2023–2025)</b></p>
+        <ul class="list-disc ml-5 text-gray-300">
+            <li>Worked on Live CRM Project</li>
+            <li>Developed modules for RGT Export</li>
+            <li>Google Drive integration for student data</li>
+            <li>Built dynamic websites with admin panels</li>
+            <li>Handled client requirements and projects</li>
+        </ul>
+    </div>
+</section>
 
-    <label>Name</label>
-    <input id="nameInput">
+<!-- Tools -->
+<section class="max-w-5xl mx-auto py-10 px-5 fade-up">
+    <h2 class="text-2xl font-bold mb-5">Tools & Technologies</h2>
+    <p class="text-gray-300">VS Code, Postman, GitHub, XAMPP</p>
+</section>
 
-    <label>Role</label>
-    <input id="roleInput">
+<!-- Contact -->
+<section id="contact" class="max-w-5xl mx-auto py-10 px-5 text-center fade-up">
+    <h2 class="text-2xl font-bold mb-5">Contact</h2>
+    <p>Email: jaygajipara07@gmail.com</p>
+    <p>Phone: 8401486257</p>
+    <p>Location: Rajkot, Gujarat</p>
+</section>
 
-    <label>About</label>
-    <textarea id="aboutInput"></textarea>
-
-    <label>Project</label>
-    <textarea id="projectInput"></textarea>
-
-    <label>Contact</label>
-    <textarea id="contactInput"></textarea>
-
-    <button onclick="updateData()">Save</button>
-</div>
+<!-- Footer -->
+<footer class="text-center p-5 bg-gray-800">
+    <p>© 2026 Jay Gajipara</p>
+</footer>
 
 <script>
-// Toggle Admin Panel
-function toggleAdmin() {
-    let panel = document.getElementById("adminPanel");
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
-}
+const elements = document.querySelectorAll('.fade-up');
 
-// Update Data
-function updateData() {
-    document.getElementById("name").innerText = document.getElementById("nameInput").value;
-    document.getElementById("role").innerText = document.getElementById("roleInput").value;
-    document.getElementById("about").innerText = document.getElementById("aboutInput").value;
-    document.getElementById("project").innerText = document.getElementById("projectInput").value;
-    document.getElementById("contact").innerText = document.getElementById("contactInput").value;
-}
-
-// Animation on scroll
-window.addEventListener("scroll", () => {
-    document.querySelectorAll(".card").forEach(card => {
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
+window.addEventListener('scroll', () => {
+    elements.forEach(el => {
+        const pos = el.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
     });
 });
 </script>
