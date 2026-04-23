@@ -3,193 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jay Gajipara | Portfolio</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
+<title>Jaykumar Gajipara Portfolio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-body {
-    background: linear-gradient(-45deg, #0f172a, #1e293b, #0ea5e9, #9333ea);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-}
-@keyframes gradient {
-    0% {background-position: 0%}
-    50% {background-position: 100%}
-    100% {background-position: 0%}
-}
-
-.glass {
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.fade {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s;
-}
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Cursor */
-.cursor {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #38bdf8;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.15s ease-out;
-    z-index: 9999;
-}
-
-.cursor2 {
-    width: 8px;
-    height: 8px;
-    background: #38bdf8;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-}
+body { font-family: Arial, sans-serif; }
+.hero { background: linear-gradient(135deg,#4e73df,#1cc88a); color:white; padding:60px 0; text-align:center; }
+.section { padding:40px 0; }
+.card { border:none; box-shadow:0 0 10px rgba(0,0,0,0.1); }
 </style>
-
 </head>
+<body>
 
-<body class="text-white cursor-none">
+<div class="hero">
+<h1>Jaykumar Gajipara</h1>
+<p>Software Developer | Laravel Developer</p>
+<p>📍 Rajkot, Gujarat | 📞 8401486257 | ✉ jaygajipara07@gmail.com</p>
+</div>
 
-<!-- Cursor -->
-<div class="cursor"></div>
-<div class="cursor2"></div>
+<div class="container section">
+<h2>About Me</h2>
+<p>I aim to work in an organization where I can grow financially, professionally, and socially while applying my skills. I am eager to contribute and continuously learn new technologies.</p>
+</div>
 
-<!-- Navbar -->
-<header class="flex justify-between items-center px-6 py-4 glass sticky top-0">
-    <h1 class="text-xl font-bold text-cyan-400">Jay.dev</h1>
-</header>
+<div class="container section">
+<h2>Skills</h2>
+<div class="row">
+<div class="col-md-3">PHP</div>
+<div class="col-md-3">Laravel</div>
+<div class="col-md-3">MySQL</div>
+<div class="col-md-3">HTML, CSS, JS</div>
+<div class="col-md-3">Bootstrap</div>
+<div class="col-md-3">GitHub</div>
+<div class="col-md-3">Postman</div>
+<div class="col-md-3">XAMPP</div>
+</div>
+</div>
 
-<!-- Hero -->
-<section class="text-center py-28 fade">
-    <h2 class="text-5xl font-bold">
-        Hi, I'm <span class="text-cyan-400">Jay Gajipara</span>
-    </h2>
-    <p class="mt-6 text-lg">Laravel Developer | PHP | MySQL</p>
-</section>
+<div class="container section">
+<h2>Experience</h2>
+<div class="card p-3 mb-3">
+<h5>Ocean Infotech (2024-2025)</h5>
+<ul>
+<li>Worked on CRM projects</li>
+<li>Google Drive API integration</li>
+<li>Developed admin panel websites</li>
+</ul>
+</div>
+<div class="card p-3 mb-3">
+<h5>Buoyancy Software (2024)</h5>
+<ul>
+<li>Frontend development using HTML, CSS, JS</li>
+<li>UI/UX improvements</li>
+</ul>
+</div>
+<div class="card p-3">
+<h5>The One Technologies (2024)</h5>
+<ul>
+<li>Responsive web development</li>
+<li>Worked with Bootstrap & jQuery</li>
+</ul>
+</div>
+</div>
 
-<!-- About -->
-<section class="max-w-6xl mx-auto px-6 py-16 fade">
-    <div class="glass p-6 rounded-xl">
-        <h2 class="text-3xl font-bold text-cyan-400 mb-4">About Me</h2>
-        <p>
-            Passionate web developer focused on building real-world applications using Laravel and modern technologies.
-        </p>
-    </div>
-</section>
+<div class="container section">
+<h2>Education</h2>
+<ul>
+<li>B.Tech Computer Engineering - Atmiya University (GPA: 8)</li>
+<li>12th - 62%</li>
+<li>10th - 73%</li>
+</ul>
+</div>
 
-<!-- Skills -->
-<section class="max-w-6xl mx-auto px-6 py-16 fade">
-    <h2 class="text-3xl font-bold text-cyan-400 mb-6">Skills</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="glass p-4 rounded text-center hover:scale-105 transition">PHP</div>
-        <div class="glass p-4 rounded text-center hover:scale-105 transition">Laravel</div>
-        <div class="glass p-4 rounded text-center hover:scale-105 transition">MySQL</div>
-        <div class="glass p-4 rounded text-center hover:scale-105 transition">Bootstrap</div>
-        <div class="glass p-4 rounded text-center hover:scale-105 transition">jQuery</div>
-        <div class="glass p-4 rounded text-center hover:scale-105 transition">Responsive</div>
-    </div>
-</section>
+<div class="container section">
+<h2>Projects</h2>
+<ul>
+<li>CRM System Development</li>
+<li>RGT Export Module Customization</li>
+<li>Vrundavan Computer System with Google Drive Integration</li>
+</ul>
+</div>
 
-<!-- Experience -->
-<section class="max-w-6xl mx-auto px-6 py-16 fade">
-    <div class="glass p-6 rounded-xl">
-        <h2 class="text-3xl font-bold text-cyan-400 mb-4">Work Experience</h2>
-        <h3 class="text-xl font-semibold">Ocean Infotech (2023–2025)</h3>
-        <ul class="list-disc ml-5 mt-3 space-y-2 text-gray-200">
-            <li>Worked on Live CRM Project</li>
-            <li>Developed modules for RGT Export</li>
-            <li>Integrated Google Drive automation</li>
-            <li>Built dynamic admin panel websites</li>
-            <li>Handled client requirements</li>
-        </ul>
-    </div>
-</section>
+<div class="container section text-center">
+<h2>Contact</h2>
+<p>Email: jaygajipara07@gmail.com</p>
+<p>Phone: 8401486257</p>
+</div>
 
-<!-- Projects -->
-<section class="max-w-6xl mx-auto px-6 py-16 fade">
-    <div class="glass p-6 rounded-xl">
-        <h2 class="text-3xl font-bold text-cyan-400 mb-4">Projects</h2>
-        <h3 class="text-xl font-bold">Car Showroom Management</h3>
-        <p class="mt-2">
-            PHP + MySQL system to manage cars, customers, and sales.
-        </p>
-    </div>
-</section>
-
-<!-- Contact -->
-<section class="text-center py-16 fade">
-    <div class="glass inline-block p-6 rounded-xl">
-        <h2 class="text-3xl font-bold text-cyan-400 mb-4">Contact</h2>
-        <p>Email: jaygajipara07@gmail.com</p>
-        <p class="mt-2">Phone: 8401486257</p>
-    </div>
-</section>
-
-<footer class="text-center py-6">
-    © 2026 Jay Gajipara
+<footer class="text-center p-3 bg-dark text-white">
+© 2026 Jaykumar Gajipara
 </footer>
-
-<script>
-// Scroll Animation
-document.querySelectorAll('.fade').forEach(el => {
-    window.addEventListener('scroll', () => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-            el.classList.add('show');
-        }
-    });
-});
-
-// Smooth Cursor Animation
-const cursor = document.querySelector('.cursor');
-const cursor2 = document.querySelector('.cursor2');
-
-let mouseX = 0, mouseY = 0;
-let posX = 0, posY = 0;
-
-document.addEventListener("mousemove", e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    cursor2.style.left = mouseX + "px";
-    cursor2.style.top = mouseY + "px";
-});
-
-function animate() {
-    posX += (mouseX - posX) * 0.15;
-    posY += (mouseY - posY) * 0.15;
-
-    cursor.style.left = posX + "px";
-    cursor.style.top = posY + "px";
-
-    requestAnimationFrame(animate);
-}
-animate();
-
-// Hover grow effect
-document.querySelectorAll("a, button, .glass").forEach(el => {
-    el.addEventListener("mouseenter", () => {
-        cursor.style.transform = "translate(-50%, -50%) scale(1.8)";
-    });
-
-    el.addEventListener("mouseleave", () => {
-        cursor.style.transform = "translate(-50%, -50%) scale(1)";
-    });
-});
-</script>
 
 </body>
 </html>
